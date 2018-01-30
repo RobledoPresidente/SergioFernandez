@@ -17,6 +17,8 @@ $jumbotron_parallax_enable = get_theme_mod( 'illdy_jumbotron_enable_parallax_eff
 $preloader_enable          = get_theme_mod( 'illdy_preloader_enable', 1 );
 $is_mobile_safari          = preg_match( '/(iPod|iPhone|iPad)/', $_SERVER['HTTP_USER_AGENT'] );
 
+$logo_image   = esc_url( get_stylesheet_directory_uri() . '/layout/images/logo.png' );
+
 $style = '';
 
 if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
@@ -66,20 +68,11 @@ endif; ?>" style="<?php echo $style ?>">
 	<div class="top-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2 col-xs-8">
-
-					<?php if ( ! empty( $logo_image ) ) { ?>
-						<?php echo '<a href="' . esc_url( home_url() ) . '"><img src="' . esc_url( $logo_image[0] ) . '" /></a>'; ?>
-					<?php } else { ?>
-						<?php if ( get_option( 'show_on_front' ) == 'page' ) { ?>
-							<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( $text_logo ); ?>" class="header-logo"><?php echo esc_html( $text_logo ); ?></a>
-						<?php } else { // front-page option ?>
-							<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="header-logo"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-						<?php } ?>
-					<?php } ?>
+				<div class="col-sm-3 col-xs-8">
+					<?php echo '<a href=""><img class="logo" src="' . esc_url( $logo_image ) . '" /></a>'; ?>
 
 				</div><!--/.col-sm-2-->
-				<div class="col-sm-10 col-xs-4">
+				<div class="col-sm-9 col-xs-4">
 					<nav class="header-navigation">
 					<?php
 						wp_nav_menu( array(
