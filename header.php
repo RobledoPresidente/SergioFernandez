@@ -69,7 +69,7 @@ endif; ?>" style="<?php echo $style ?>">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3 col-xs-8">
-					<?php echo '<a href=""><img class="logo" src="' . esc_url( $logo_image ) . '" /></a>'; ?>
+					<?php echo '<a href="/"><img class="logo" src="' . esc_url( $logo_image ) . '" /></a>'; ?>
 
 				</div><!--/.col-sm-2-->
 				<div class="col-sm-9 col-xs-4">
